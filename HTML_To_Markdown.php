@@ -265,7 +265,7 @@ class HTML_To_Markdown
                 $markdown = $this->convert_anchor($node);
                 break;
             case "#text":
-                $markdown = preg_replace('~\s+~', ' ', $value);
+                $markdown = preg_replace('~[\r\n\t\f ]+~', ' ', $value);
                 $markdown = preg_replace('~^#~', '\\\\#', $markdown);
                 break;
             case "#comment":
